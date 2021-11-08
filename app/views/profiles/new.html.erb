@@ -1,0 +1,20 @@
+<h1>Profiles#new</h1>
+
+
+<%= form_with model: @profiles do |f| %>
+    <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.label :rating %>
+        <%= f.text_field :rating %>
+    </p>
+    <p>
+        <%= f.label :owner %>
+        <%= f.text_field :owner %>
+    </p>
+    <p>
+        <%= f.submit 'Create new profile' %>
+    </p>
+<% end %>

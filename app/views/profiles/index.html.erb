@@ -1,0 +1,11 @@
+<h1>Profiles</h1>
+
+<p><%= link_to 'New Profile', new_profile_path %></p>
+
+<table>
+    <% @profiles.each do |pro|%>
+    <tr>
+        <td><%= link_to pro.name, profile_path(pro.id) %></td>      
+    </tr>
+    <% end %>
+</table>
