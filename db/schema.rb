@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_09_002929) do
+ActiveRecord::Schema.define(version: 2021_11_09_025538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,9 +47,11 @@ ActiveRecord::Schema.define(version: 2021_11_09_002929) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
-    t.bigint "contact_list_id", null: false
-    t.bigint "review_profile_id", null: false
-    t.bigint "experience_id", null: false
+    t.bigint "contact_list_id"
+    t.bigint "review_profile_id"
+    t.bigint "experience_id"
+    t.bigint "boat_id", null: false
+    t.index ["boat_id"], name: "index_profiles_on_boat_id"
     t.index ["contact_list_id"], name: "index_profiles_on_contact_list_id"
     t.index ["experience_id"], name: "index_profiles_on_experience_id"
     t.index ["review_profile_id"], name: "index_profiles_on_review_profile_id"
@@ -64,6 +66,7 @@ ActiveRecord::Schema.define(version: 2021_11_09_002929) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "profiles", "boats"
   add_foreign_key "profiles", "contact_lists"
   add_foreign_key "profiles", "experiences"
   add_foreign_key "profiles", "review_profiles"

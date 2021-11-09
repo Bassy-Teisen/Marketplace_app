@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'boats/index'
+  get 'boats/new'
+  get 'boats/show'
+  get 'boats/update'
+  get 'boats/edit'
+  get 'boats/creat'
+  get 'boats/destroy'
+  get 'boat/index'
+  get 'boat/new'
+  get 'boat/show'
+  get 'boat/update'
+  get 'boat/edit'
+  get 'boat/creat'
+  get 'boat/destroy'
   get '/profiles', to: 'profiles#index', as: "profiles"
   post '/profiles', to: 'profiles#create'
   get '/profiles/new', to: 'profiles#new', as: 'new_profile'
