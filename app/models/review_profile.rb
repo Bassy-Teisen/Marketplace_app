@@ -1,0 +1,2 @@
+class ReviewProfile < ApplicationRecord
+end
